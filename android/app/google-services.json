@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "62908441596",
+    "firebase_url": "https://whatsapp-flutter-tutorial.firebaseio.com",
+    "project_id": "whatsapp-flutter-tutorial",
+    "storage_bucket": "whatsapp-flutter-tutorial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62908441596:android:6e38a07958d10922",
+        "android_client_info": {
+          "package_name": "com.example.whatsapp_flutter_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62908441596-amg5cr3covc37vr75hfq3covfj718eb8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.whatsapp_flutter_tutorial",
+            "certificate_hash": "131a012ad0299b54ef9f730a0a58e15319fc6ebd"
+          }
+        },
+        {
+          "client_id": "62908441596-9sn24lkdn5m1k49avlme501jl6fo5juo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4eYf7ItDAQsN5rgmIe3Y-5A5gXxR0ito"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62908441596-9sn24lkdn5m1k49avlme501jl6fo5juo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
