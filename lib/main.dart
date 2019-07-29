@@ -1,6 +1,20 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:camera/camera.dart';
 
-void main() => runApp(MyApp());
+
+//Own page imports
+import 'package:whatsapp_flutter_tutorial/tab_pages/camera.dart';
+import 'package:whatsapp_flutter_tutorial/auth/authentication.dart';
+
+
+List<CameraDescription> cameras;
+Future<void> main() async{
+  ////Fix this first
+  cameras = await availableCameras();
+  runApp(MyApp());
+}
+  
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -9,10 +23,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-      
         primarySwatch: Colors.teal,
       ),
-      home: MyHomePage()
+      home: Authentication()
     );
   }
 }
@@ -26,11 +39,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final tabs=<Tab>[
+    Tab(icon: Icon(Icons.photo_camera)),
     Tab(text: "CHATS",),
     Tab(text: "STATUS",),
     Tab(text: "CALLS",)
   ];
   final tabPages=<Widget>[
+      CameraTabPage(),
       Center(child: Text("Chats"),),
       Center(child: Text("Status"),),
       Center(child: Text("Calls"),)
@@ -39,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: 1,
       length: tabs.length,
       child: CustomScrollView(
         slivers: <Widget>[
@@ -48,7 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
             floating: true,
             title: Text("WhatsApp"),
             bottom: TabBar(tabs: tabs),
-          ),
+            actions: <Widget>[
+              IconButton(icon: Icon(Icons.search, color: Colors.white,),onPressed: (){},tooltip: "Search",),
+              IconButton(icon: Icon(Icons.more_vert, color: Colors.white),onPressed: (){},tooltip: "More options",)
+            ],
+            ),
           SliverFillRemaining(child: TabBarView(children: tabPages,),)
         ],
       ),
